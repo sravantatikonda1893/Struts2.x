@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts  
+Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<!-- <struts-default> consists of 40 interceptors of which 10 are by defaultly 
+		initiated for every request. Also consists of bean classes -->
+	<package name="controller" extends="struts-default">
+
+<interceptors>
+<interceptor name="mylog"  class="controller.MyLogController"/>
+</interceptors>
+		<action name="hello" class="controller.HelloController">
+		<interceptor-ref name="mylog"/>
+		<!-- This default stack is necessary as it useful executing default stuff like validations, I18N support features -->
+		<interceptor-ref name="defaultstack"/>
+			<!-- This name ="input" is required for displaying the validation errors 
+				if there, any to check using validation() method to intimate to check validation 
+				errors -->
+			<!-- And the getter methods are used to repopulate the data being entered 
+				by the user othan error fields to reenter -->
+			<result name="success">successs.jsp</result>
+		</action>
+	</package>
+</struts>
+

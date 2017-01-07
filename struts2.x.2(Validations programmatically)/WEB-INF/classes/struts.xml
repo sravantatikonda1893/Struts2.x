@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts  
+Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+<!-- In struts 1.x, we have <messages-resouces> tag for configuring the accessing of properties file for validation messages. Here, we have <constant name> tag for same purpose -->
+<constant name="struts.custom.i18n.resources" value="resources/messages"/>
+<!-- <struts-default> consists of 40 interceptors of which 10 are by defaultly initiated for every request. Also consists of bean classes -->
+	<package name="controller" extends="struts-default">
+
+		<action name="reg" class="controller.EmpController">
+	<!-- This name ="input" is required for displaying the validation errors if there any to check using validation() method to intimate to check validation errors -->
+			<result name="input">index.jsp</result>
+			<result name="success">successs.jsp</result>
+			
+			
+		</action>
+
+	</package>
+</struts>
+

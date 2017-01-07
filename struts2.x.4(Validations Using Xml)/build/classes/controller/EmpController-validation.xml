@@ -1,0 +1,31 @@
+<!DOCTYPE validators PUBLIC "-//Open Symphony Group//XWork Validator 1.0.3//EN"
+ "http://www.opensymphony.com/xwork-validator-1.0.3.dtd">
+<!-- We dont need to configure this xml file. We just need to follow some naming conventions -->
+ <validators>
+ <field name="name">
+ <filed-validator type="requiredstring">
+ <!-- <message>name cannot be empty</message> -->
+ <message name="msg1"/>
+ </filed-validator>
+ </field>
+ 
+ <field name="email">
+ <filed-validator type="requiredstring">
+ <!-- <message>email cannot be empty</message>-->
+ <message name="msg2"/>
+ </filed-validator>
+ <filed-validator type="email">
+ <!--message can be <message>Wrong email format</message>  -->
+ <message name="msg3"/>
+ </filed-validator>
+
+ </field>
+
+ <field name="address">
+ <filed-validator type="requiredstring">
+<!--   <message>address cannot be empty</message>-->
+  <message name="msg4"/>
+ </filed-validator>
+ </field>
+
+ </validators>
